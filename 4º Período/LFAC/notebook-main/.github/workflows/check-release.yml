@@ -1,0 +1,46 @@
+name: Check Release
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+
+permissions:
+  contents:
+    write
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.sha }}
+  cancel-in-progress: true
+
+jobs:
+  check_release:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    strategy:
+      matrix:
+        group: [check_release, link_check]
+      fail-fast: false
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Base Setup
+        uses: jupyterlab/maintainer-tools/.github/actions/base-setup@v1
+      - name: Install Dependencies
+        run: |
+          pip install -e .
+      - name: Check Release
+        if: ${{ matrix.group == 'check_release' }}
+        uses: jupyter-server/jupyter_releaser/.github/actions/check-release@v1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          version_spec: next
+      - name: Check Links
+        if: ${{ matrix.group == 'link_check' }}
+        uses: jupyter-server/jupyter_releaser/.github/actions/check-links@v1
+
+      - name: Upload Distributions
+        uses: actions/upload-artifact@v2
+        if: ${{ matrix.group == 'check_release' }}
+        with:
+          name: notebook-jupyter-releaser-dist-${{ github.run_number }}
+          path: .jupyter_releaser_checkout/dist

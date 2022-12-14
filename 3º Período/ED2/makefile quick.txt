@@ -1,0 +1,5 @@
+all:
+	gcc -c main.c
+	gcc -c sorting
+	gcc -o main main.o sorting.o
+	./main

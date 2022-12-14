@@ -1,0 +1,34 @@
+REGINALDO NETO
+Ex. 01 - A
+ANOS = X
+Nº TRANSISTORES = Y
+
+PASSO 1:
+
+[1971 1972 1974 1978 1982 1985 1989 1993 1997 1999 2000 2001 2003 2004]
+
+PASSO 2:
+[log(2300) log(2500) log(4500) log(29000) log(134000) log(275000) log(1200000) log(3100000) log(7500000) log(9500000) log(4200000) log(25000000) log(220000000) log(592000000)]
+
+grau 1
+---------------------------------------------------------
+EX. 01 - B
+ESTIMATIVA PARA 2020
+
+PASSO 3:
+ADICIONAR OS EXPOENTES DA FUNÇÃO LINEAR EM VARIAVEIS AUXILIARES
+aux1=exp(-638.5472);
+aux2=exp(0.3279);
+
+PASSO 4:
+aux3=aux1*aux2^2020
+
+PASSO 5:
+
+estimativa=(log(aux3)/aux1)/aux2
+---------------------------------------------------------
+EX. 01 - C
+
+PASSO 6:
+
+ano=log(10^12/aux1)/log(aux2)

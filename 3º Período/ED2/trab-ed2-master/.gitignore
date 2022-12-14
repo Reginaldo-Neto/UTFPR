@@ -1,0 +1,9 @@
+gerador/teste.dat
+teste.dat
+main.exe
+main
+saida.bin
+*.o
+makefile
+entrada.dat
+out*.bin

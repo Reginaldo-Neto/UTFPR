@@ -1,0 +1,6 @@
+Criar um arquivo com o gerador e colocar na pasta pai (onde está a main)
+Alterar o nome para "entrada.dat" ou alterar na main.c para consumir o nome
+do arquivo
+
+make - executa todo o resto do processo
+make clear - exclui os arquivos compilados

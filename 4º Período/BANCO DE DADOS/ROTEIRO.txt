@@ -1,0 +1,33 @@
+APRESENTAÇÃO INDIVIDUAL
+
+NOMES
+DISCIPLINA
+TEMA DO TRABALHO
+
+
+O QUE É POSTGRESQL?
+	É um SGBD relacional, open source desenvolvido em uma universidade dos EUA 
+	semelhante ao mySQL que nós utilizamos em BD1. Ele possui comandos muito parecidos,
+	pois é um dos pioneiros em muitos conceitos que vieram a ser aplicados em outros
+	SGBD´s recentes.
+
+	É muito utilizado no ambiente corporativo e de desenvolvimento nos dias atuais,
+	devido a sua versatilidade por se tratar de um software livre-open source que
+	possibilita diversas melhorias e contruibuições da comunidade, incluindo de grandes
+	empresas como a Apple e a RedHat, entretanto nenhuma delas é a "DONA" do postgreSQL.
+
+O QUE É FDW?
+	Foreign Data Wrapper é um recurso (uma extensão) que permite manipular tabelas externas
+	em um banco de dados PostgreSQL, são proxies para alguma outra fonte de dados.
+	Quando você faz uma consulta em uma tabela estrangeira, o FDW consulta a fonte de dados
+	externa e retorna os resultados como se tivessem vindo de uma tabela em SEU banco de dados.
+
+	O PostgreFDW funciona como um meio de campo para a conexão entre os bancos de dados, ele faz
+	uma "ponte" para que os dados sejam acessados de outra localidade, através do FDW de cada SGBD.
+	Deste modo após a configuração do FDW, é possível integrar um objeto externo (SGBD´s relacionais
+	e não relacionais, assim como arquivos).
+
+FUNCIONALIDADES?
+	O fdw não tem apenas a funcionalidade de tornar dados visíveis de várias fontes em um único local,
+	ele também torna capaz a integração do uso de todos esses dados, através de JOINS ou filtros de 
+	pesquisa assim como o CRUD de todas essas tabelas externas, possuindo um comportamento de um BD local.	

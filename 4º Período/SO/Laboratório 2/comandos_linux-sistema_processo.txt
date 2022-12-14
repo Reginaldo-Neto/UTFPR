@@ -1,0 +1,56 @@
+LINUX - COMANDOS
+----------------
+
+
+1. SISTEMA
+
+- obter a versão do kernel
+# uname -a
+
+- informação da distribuição Linux
+# lsb_release -a
+
+- informação da versão do debian
+# cat /etc/debian_version
+
+- tempo de sistema ativo e carga
+# uptime
+
+- nome da máquina
+# hostname
+
+- informações de login e outros
+# last
+# last reboot
+
+- informações de detecção de hardware e mensagens de boot
+# dmesg
+
+- informações de cpu
+# lscpu
+
+- informações de dispositivos pci
+# lspci
+
+- informações de dispositivos usb
+# lsusb
+
+- informações de hardware
+# lshw
+
+- monitoramento das interrupções
+# watch -n1 'cat /proc/interrupts'
+
+- limites do sistema
+# ulimit -a
+# sysctl -a
+
+
+2. PROCESSOS
+
+- desacopla do terminal, não finaliza ao fechar o terminal (ignora a solicitação de finalização)
+# disown -h %1
+
+- ignora sinais de HANGUP
+# nohup COMANDO > myoutput.log &
+

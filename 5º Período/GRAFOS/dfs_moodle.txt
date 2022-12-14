@@ -1,0 +1,95 @@
+
+from asyncio.windows_events import NULL
+from collections import defaultdict
+class Graph:
+    def __init__(self, Nvertices):
+        self.Nvertices = Nvertices
+        self.matriz = []
+        self.grafo = defaultdict(list)
+        for x in range(Nvertices):
+            self.matriz.append( [0] * Nvertices )
+    def addEdge(self, Vsai, Ventra, peso=1):
+    #matriz pra saber grau de saida e entrada
+        for x in range (self.Nvertices):
+            if(Vsai == x):
+                for y in range (self.Nvertices):
+                    if(Ventra == y):
+                        self.matriz[x][y]=1
+        #lista pra fazer buscas em profundidade e largura
+        self.grafo[Vsai].append(Ventra)
+    def getInDegree(self, vertice):
+        entrada=0
+        for x in range (self.Nvertices):
+            if(self.matriz[x][vertice]==1):
+                entrada=entrada+1
+        return entrada
+    def getOutDegree(self, vertice):
+        saida=0
+        for y in range (self.Nvertices):
+            if(self.matriz[vertice][y]==1):
+                saida=saida+1
+        return saida
+    def getDegree(self, vertice):
+        geral=0
+        geral = self.getInDegree(vertice)
+        geral = geral + self.getOutDegree(vertice)
+#         return geral       
+    def BFS(self, vertice):
+        #marca todos os vertices como nao visitado
+        visitado = [False] * (self.Nvertices)
+        queue = []
+        queue.append(vertice)
+        visitado[vertice]= True
+
+        while (queue):
+            #tira o vertice da queue e printa ele
+            vertice = queue.pop(0)
+            print (vertice, end = " ")
+            #pega todos os adjacente e se nao for visitado visita 
+            for i in self.grafo[vertice]:
+                if i< len(visitado):
+                    if visitado[i] == False:
+                        queue.append(i)
+                        visitado[i] = True
+    def DFS_visit(self, vertice):
+        tempo=tempo+1
+        self.grafo[vertice]=tempo
+    def DFS(self, vertice):
+        cor=[]
+        predecessor=[]
+        for u in (self.Nvertices):
+            cor[u] = 'Branco'
+            predecessor[u] = NULL
+        tempo=0
+        for u in (self.Nvertices):
+            if cor[u]=='Branco':
+              self.DFS_visit(u)  
+
+DFS-Visit(Grafo G, Vértice u)
+Tempo = Tempo + 1
+D[u] = tempo
+Cor[u] = CINZA
+Para cada v no conjunto em Adj[u]
+SE Cor[v] == BRANCO
+Predecessor[v] = u
+DFS-Visit(G, v)
+Cor[u] = PRETO
+tempo = tempo + 1
+F[u] = tempo    
+g = Graph(13)
+g.addEdge(0,1)
+g.addEdge(1, 2)
+g.addEdge(1, 3)
+g.addEdge(1, 4)
+g.addEdge(2, 5)
+g.addEdge(2, 6)
+g.addEdge(4, 7)
+g.addEdge(4, 8)
+g.addEdge(5, 9)
+g.addEdge(5, 10)
+g.addEdge(7, 11)
+g.addEdge(7, 12)
+g.BFS(0)
+
+
+ 

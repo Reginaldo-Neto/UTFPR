@@ -1,0 +1,47 @@
+.jp-FileBrowser {
+  height: 100%;
+}
+
+.lm-TabPanel {
+  height: 100%;
+}
+
+.jp-TreePanel .lm-TabPanel-tabBar {
+  overflow: visible;
+  min-height: 32px;
+  border-bottom: unset;
+  height: var(--jp-private-toolbar-height);
+}
+
+.jp-TreePanel .lm-TabBar-content {
+  height: 100%;
+}
+
+.jp-TreePanel .lm-TabBar-tab {
+  color: var(--jp-ui-font-color0);
+  font-size: var(--jp-ui-font-size1);
+  padding-top: 6px;
+  height: 100%;
+}
+
+.jp-TreePanel .lm-TabBar-tabLabel {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.jp-FileBrowser-toolbar.jp-Toolbar .jp-ToolbarButtonComponent {
+  width: unset;
+}
+
+.jp-FileBrowser-toolbar > .jp-Toolbar-item {
+  flex-direction: column;
+  justify-content: center;
+}
+
+.jp-DropdownMenu .lm-MenuBar-itemIcon svg {
+  vertical-align: sub;
+}
+
+button[data-command='filebrowser:refresh'] .jp-ToolbarButtonComponent-label {
+  display: none;
+}
